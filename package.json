@@ -1,0 +1,38 @@
+{
+    "name": "basic-demo",
+    "version": "1.0.0",
+    "description": "Starscape is an anonymous interactive game",
+    "keywords": [
+        "interaction",
+        "pointer-events"
+    ],
+    "main": "src/index.js",
+    "dependencies": {
+        "@react-three/fiber": "7.0.25",
+        "@types/three": "0.136.1",
+        "babel": "^6.23.0",
+        "nodemon": "^2.0.15",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "react-redux": "^7.2.6",
+        "react-router-dom": "^6.2.2",
+        "react-scripts": "5.0.0",
+        "socket.io": "^4.4.1",
+        "socket.io-client": "^4.4.1",
+        "three": "0.137.0",
+        "webpack": "^5.70.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "webpack",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject",
+        "run start": "npm run build:dev & nodemon server"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ]
+}
