@@ -23,7 +23,7 @@
         "webpack": "^5.70.0"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "PORT=5500 react-scripts start",
         "build": "webpack",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
