@@ -34,10 +34,15 @@ const server = app.listen(PORT, () => {
 const serverSocket = socket(server)
 
 serverSocket.on('connection', (socket) => {
+  socket.emit('hello', "world")
+
+
   console.log(`Connection from client ${socket.id}`)
   socket.emit("hello from server", 1, "2", {3: Buffer.from([4])})
 
-  socket.on("hello from client", () => {
+  socket.on("hello from client", (data) => {
     console.log('A message was received from the client')
+    console.log('data:', data)
   })
+
 })

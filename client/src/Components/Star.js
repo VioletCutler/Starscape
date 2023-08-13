@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
+import { io } from 'socket.io-client';
 
 export default function Star(props) {
   const ref = useRef();
@@ -18,6 +19,8 @@ export default function Star(props) {
   }
 
   function colorClickHandler(event) {
+
+
     if (0 <= starShine && starShine < 5) {
       for (let i = starShine; i <= 100; i += 1) {
         doSetTimeout(i);

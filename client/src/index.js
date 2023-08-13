@@ -1,22 +1,23 @@
-import ReactDOM from 'react-dom'
-import React from 'react'
-import './style.css'
-import App from './App'
-import Box from './Components/Box'
+import ReactDOM from "react-dom";
+import React from "react";
+import "./style.css";
+import App from "./App";
+import Box from "./Components/Box";
 
-import socket from 'socket.io-client';
-// import {Provider} from 'react-redux'
-// import {Router} from 'react-router-dom'
+import { io } from "socket.io-client";
 
-const clientSocket = socket(window.location.origin);
-/*
-  Never seen window.location before?
-  This object describes the URL of the page we're on!
-*/
+const socket = io("ws://localhost:3000", {
+  extraHeaders: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+    "Access-Control-Allow-Headers":
+      "Content-type, Authorization, X-Requested-With",
+  },
+  transports: ["websocket", "polling", "flashsocket"],
+});
 
-clientSocket.on('connect', () => {
-  console.log('Connected to server');
-})
+socket.on("connect", () => {
+  console.log("Connected to server:");
+});
 
-ReactDOM.render(<App />, document.getElementById('root'))
-
+ReactDOM.render(<App />, document.getElementById("root"));
