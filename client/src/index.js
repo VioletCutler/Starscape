@@ -18,6 +18,7 @@ const socket = io("ws://localhost:3000", {
 
 socket.on("connect", () => {
   console.log("Connected to server:");
+  console.log("test")
 });
 
 ReactDOM.render(<App />, document.getElementById("root"));
